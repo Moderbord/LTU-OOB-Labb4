@@ -42,7 +42,7 @@ public:
 
 
 	// Additional functionality
-	const static Matrix2D rotationMatrix(float a, float b, float c, float d);
+	const static Matrix2D rotationMatrix(float x);
 	const static Matrix2D identityMatrix();
 	const void print();
 	const void printA();

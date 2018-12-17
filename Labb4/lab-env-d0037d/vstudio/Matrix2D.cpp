@@ -114,13 +114,13 @@ const Matrix2D Matrix2D::transpose()
 	return matrix;
 }
 
-const Matrix2D Matrix2D::rotationMatrix(float a, float b, float c, float d)
+const Matrix2D Matrix2D::rotationMatrix(float x)
 {
 	Matrix2D matrix;
-	matrix.arr[0] = cos(a * M_PI / 180.0);
-	matrix.arr[1] = -sin(b * M_PI / 180.0);
-	matrix.arr[2] = sin(c * M_PI / 180.0);
-	matrix.arr[3] = cos(d * M_PI / 180.0);
+	matrix.arr[0] = cos(x * M_PI / 180.0);
+	matrix.arr[1] = -sin(x * M_PI / 180.0);
+	matrix.arr[2] = sin(x * M_PI / 180.0);
+	matrix.arr[3] = cos(x * M_PI / 180.0);
 	return matrix;
 }
 
