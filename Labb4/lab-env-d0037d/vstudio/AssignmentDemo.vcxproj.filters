@@ -5,6 +5,7 @@
     <ClCompile Include="..\projects\assignment\code\main.cc" />
     <ClCompile Include="Matrix2D.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="Shape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\projects\assignment\code\assignmentapp.h" />
