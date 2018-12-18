@@ -19,13 +19,13 @@ public:
 		int i = size;
 		while (i >= 0)
 		{
-			if (arr[i - 1] > x) {
+			if (arr[i - 1] > x) {			// Compared value is higher than inserted value
 				arr[i] = arr[i - 1];		// Right-shifts last compared value
-				i--;
+				i--;						// Next value
 			} 
-			else
-			{
-				arr[i] = x;
+			else							// Compared value is equal or lower than inserted value
+			{		
+				arr[i] = x;					// Inserts value
 				size++;
 				return;
 			}
@@ -36,11 +36,11 @@ public:
 	{
 		for (int i = 0; i < size; i++)
 		{
-			if (arr[i] == x)
+			if (arr[i] == x)						// Matched value
 			{
-				size--;
+				size--;								// Decrease size
 
-				for (int j = i; j < size; j++)
+				for (int j = i; j < size; j++)		// Left-shift from matched value to new size
 				{
 					arr[j] = arr[j + 1];
 				}
