@@ -6,15 +6,14 @@
 class Shape
 {
 protected:
-	Vector2D position;
+	Vector2D anchorPoint;
 	Matrix2D rotation;
 	Assignment::AssignmentApp::Colour colour;
 
 public:
 	virtual ~Shape();
-	virtual void updatePosition(Vector2D newPos) = 0;
-	virtual void updatePosition(float x, float y) = 0;
-	virtual void rotateShape() = 0;
+	virtual void updateShapePosition(float x, float y) = 0;
+	virtual void updateShapeRotation(float x) = 0;
 	virtual void drawShape() = 0;
 };
 
@@ -22,14 +21,13 @@ public:
 class Square : public Shape
 {
 private:
-	float dimension;
+	float size;
 	Vector2D vertices[4];
 
 public:
 	Square(float dim);
-	void updatePosition(Vector2D newPos);
-	void updatePosition(float x, float y);
-	void rotateShape();
+	void updateShapePosition(float x, float y);
+	void updateShapeRotation(float x);
 	void drawShape();
 };
 
@@ -43,9 +41,8 @@ private:
 
 public:
 	Triangle(float base, float height);
-	void updatePosition(Vector2D newPos);
-	void updatePosition(float x, float y);
-	void rotateShape();
+	void updateShapePosition(float x, float y);
+	void updateShapeRotation(float x);
 	void drawShape();
 };
 
@@ -55,11 +52,11 @@ class Circle : public Shape
 private:
 	float radius;
 	float roundness;
+	Vector2D vertices[10];
 
 public:
 	Circle(float radius);
-	void updatePosition(Vector2D newPos);
-	void updatePosition(float x, float y);
-	void rotateShape();
+	void updateShapePosition(float x, float y);
+	void updateShapeRotation(float x);
 	void drawShape();
 };

@@ -32,13 +32,13 @@ void
 AssignmentApp::Setup()
 {
 
-	Shape* square = new Square(0.5f);
+	Shape* square = new Square(0.3f);
 	renderQueue.push_back(square);
 
 	Shape* circle = new Circle(0.5f);
 	renderQueue.push_back(circle);
 
-	Shape* triangle = new Triangle(0.4f, 0.4f);
+	Shape* triangle = new Triangle(0.4f, 0.5f);
 	renderQueue.push_back(triangle);
 }
 
@@ -48,13 +48,17 @@ AssignmentApp::Setup()
 void
 AssignmentApp::Update()
 {
-	renderQueue[0]->updatePosition(0.001f, 0.001f);
-	renderQueue[1]->updatePosition(-0.002f, 0.0f);
-	renderQueue[2]->updatePosition(0.002f, -0.002f);
+	renderQueue[0]->updateShapeRotation(0.08f);
+	renderQueue[0]->updateShapePosition(0.002f, 0.001f);
+
+	renderQueue[1]->updateShapeRotation(4.4f);
+	renderQueue[1]->updateShapePosition(-0.002f, 0.0f);
+
+	renderQueue[2]->updateShapeRotation(-1.4f);
+	renderQueue[2]->updateShapePosition(0.002f, -0.002f);
 
 	for (auto s : renderQueue)
 	{
-		s->rotateShape();
 		s->drawShape();
 	}
 }

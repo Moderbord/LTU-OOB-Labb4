@@ -46,8 +46,8 @@ void Matrix2D::operator=(const Matrix2D &matrix)
 const Vector2D Matrix2D::operator*(Vector2D &vector)
 {
 	Vector2D vec;
-	vec.setX(this->arr[0] * vector.arr[0] + this->arr[1] * vector.arr[0]);
-	vec.setY(this->arr[2] * vector.arr[1] + this->arr[3] * vector.arr[1]);
+	vec.setX(this->arr[0] * vector.arr[0] + this->arr[1] * vector.arr[1]);
+	vec.setY(this->arr[2] * vector.arr[0] + this->arr[3] * vector.arr[1]);
 	return vec;
 }
 
@@ -117,10 +117,10 @@ const Matrix2D Matrix2D::transpose()
 const Matrix2D Matrix2D::rotationMatrix(float x)
 {
 	Matrix2D matrix;
-	matrix.arr[0] = cos(x * M_PI / 180.0);
-	matrix.arr[1] = -sin(x * M_PI / 180.0);
-	matrix.arr[2] = sin(x * M_PI / 180.0);
-	matrix.arr[3] = cos(x * M_PI / 180.0);
+	matrix.arr[0] = cosf(x * M_PI / 180.0);
+	matrix.arr[1] = -sinf(x * M_PI / 180.0);
+	matrix.arr[2] = sinf(x * M_PI / 180.0);
+	matrix.arr[3] = cosf(x * M_PI / 180.0);
 	return matrix;
 }
 
