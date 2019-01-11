@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <stdio.h>
 
 class SortedArray
 {
@@ -16,6 +17,11 @@ public:
 
 	void insert(int x)
 	{
+		int *newArr = new int[size + 1];
+		std::memcpy(newArr, arr, sizeof(int)*size);
+		delete[] arr;
+		arr = newArr;
+
 		int i = size;
 		while (i >= 0)
 		{
@@ -44,6 +50,12 @@ public:
 				{
 					arr[j] = arr[j + 1];
 				}
+
+				int *newArr = new int[size];
+				std::memcpy(newArr, arr, sizeof(int)*size);
+				delete[] arr;
+				arr = newArr;
+
 				return;
 			}
 		}
